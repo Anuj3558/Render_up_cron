@@ -1,0 +1,16 @@
+name: Scheduled GET Request
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # Every 5 minutes
+  workflow_dispatch:       # Optional: allow manual trigger
+
+jobs:
+  ping-url:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hit GET Request URL
+        run: |
+          RESPONSE=$(curl -s https://your-api-url.com/endpoint)
+          echo "Response: $RESPONSE"
