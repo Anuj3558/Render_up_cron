@@ -1,0 +1,16 @@
+name: Scheduled GET Request
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # Every 5 minutes
+  workflow_dispatch:       # Optional: allow manual trigger
+
+jobs:
+  ping-url:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hit GET Request URL
+        run: |
+          RESPONSE=$(curl -s https://student-result-management-system-bvv6.onrender.com/api/result-formats)
+          echo "Response: $RESPONSE"
