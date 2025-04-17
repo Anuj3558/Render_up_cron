@@ -2,7 +2,7 @@ name: Scheduled GET Request
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Every 5 minutes
+    - cron: '*/1 * * * *'  # Every 5 minutes
        # Optional: allow manual trigger
 
 jobs:
